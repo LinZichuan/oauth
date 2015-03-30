@@ -19,7 +19,7 @@ def blog(request):
 def log(request):
       url = 'https://api.weibo.com/oauth2/authorize'
       client_id = '111990827'
-      redirect_uri = 'http://172.16.12.150:8000/log_success'
+      redirect_uri = 'http://123.57.209.235:8000/log_success'
       para = "?client_id=" + client_id + "&response_type=code&redirect_uri=" + redirect_uri
       return HttpResponseRedirect(url + para)
 
@@ -29,7 +29,7 @@ def log_success(request):
       else :
             return HttpResponse('Error: no code!')
       url = 'https://api.weibo.com/oauth2/access_token'
-      redirect_uri = 'http://172.16.12.150:8000/log_success'
+      redirect_uri = 'http://123.57.209.235:8000/log_success'
       #redirect_uri = 'http://lzc.herokuapp.com/success'
       data = {
         'client_id': 111990827,
