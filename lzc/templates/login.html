@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>User</h1>
+{%for u in user%}
+	<ul>
+		<li><a href="/posts/{{u.uid}}"><button type="button">{{u.name}}</button></a></li>
+	</ul>
+{%endfor%}
+<a href="/log/"><button type="button">weibo_login</button></a>
+</body>
+</html>

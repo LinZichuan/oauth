@@ -1,7 +1,20 @@
-{%block title %} HomePage {%endblock %}
-
+{%block title %} <h1>Sina Weibo </h1>{%endblock %}
+<hr>
 {%block content %}
 <div> 
-		<h1> Welcome, {{name}} </h1>
+		<h1> Username : {{name}} </h1>
+		<h1> UserId   : {{uid}}    </h1>
+		<h1> keywords: 
+		{%for each in keywords%}
+			<a href="/posts/{{uid}}?keywords={{each}}"><button type="button">{{each}}</button></a>
+		{%endfor%}
+		</h1>
+		<hr>
+		<h1> Weibo</h1>
+		<ul>
+			{%for each in text%}
+				<li>{{each}}</li>
+			{%endfor%}
+		</ul>	
 </div>
 {% endblock %}

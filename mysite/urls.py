@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     (r'^log_success/$', 'lzc.views.log_success'),
     (r'^homepage/$', 'lzc.views.homepage'),
     (r'^users/$', 'lzc.views.users'),
-    (r'^posts/([0-9]+)/$', 'lzc.views.posts')
+    (r'^posts/([0-9]+)/$', 'lzc.views.posts'),
+    (r'^homepage/retrieve/$', 'lzc.views.retrieve'),
+    (r'^homepage/release/$', 'lzc.views.release') 
     #(r'^admin/', include(admin.site.urls)),
 ) 
