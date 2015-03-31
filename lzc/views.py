@@ -23,7 +23,7 @@ def blog(request):
 def log(request):
       url = 'https://api.weibo.com/oauth2/authorize'
       client_id = '111990827'
-      redirect_uri = 'http://127.0.0.1:8000/log_success'
+      redirect_uri = 'http://linzc.xyz/log_success'
       para = "?client_id=" + client_id + "&response_type=code&redirect_uri=" + redirect_uri
       return HttpResponseRedirect(url + para)
 
@@ -33,7 +33,7 @@ def log_success(request):
       else :
             return HttpResponse('Error: no code!')
       url = 'https://api.weibo.com/oauth2/access_token'
-      redirect_uri = 'http://127.0.0.1:8000/log_success'
+      redirect_uri = 'http://linzc.xyz/log_success'
       #redirect_uri = 'http://lzc.herokuapp.com/success'
       data = {
         'client_id': 111990827,
@@ -59,7 +59,7 @@ def log_success(request):
             user.name = user_info['screen_name']
             user.save()
             request.session['uid'] = res['uid']
-            return HttpResponseRedirect('/homepage/') 
+            return HttpResponseRedirect('/posts/'+user.uid) 
 
 def get_user_info(uid, access_token):
       url = 'https://api.weibo.com/2/users/show.json' 
