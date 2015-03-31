@@ -1,20 +1,48 @@
-{%block title %} <h1>Sina Weibo </h1>{%endblock %}
-<hr>
-{%block content %}
-<div> 
-		<h1> Username : {{name}} </h1>
-		<h1> UserId   : {{uid}}    </h1>
-		<h1> keywords: 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+<div>
+<div class="alert alert-success" role="alert">
+    <strong><h1>Sina Weibo</h1></strong>
+</div>
+<div class="alert alert-info" role="alert">
+	<div> 
+		<h4> Username : {{name}} </h4>
+		<h4> UserId   : {{uid}}  </h4>
+		<h4> keywords: 
 		{%for each in keywords%}
-			<a href="/posts/{{uid}}?keywords={{each}}"><button type="button">{{each}}</button></a>
+			<a href="/posts/{{uid}}?keywords={{each}}"><button type="button" class="btn btn-lg btn-info">{{each}}</button></a>
 		{%endfor%}
-		</h1>
-		<hr>
-		<h1> Weibo</h1>
+		</h4>
+	</div>
+</div>
+<div class="alert alert-warning" role="alert">
+		<h2><strong> Weibo </strong></h2>
 		<ul>
 			{%for each in text%}
 				<li>{{each}}</li>
 			{%endfor%}
-		</ul>	
+		</ul>
 </div>
-{% endblock %}
+</div>
+</body>
+</html>
