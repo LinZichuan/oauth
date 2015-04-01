@@ -108,8 +108,11 @@ def posts(request, userid):
 	request.session['uid'] = userid
 	response = get_weibo(user.uid, user.access_token)
 	user_text = get_text_list(response)
-	keywords = get_keywords(user_text).split(',')
-	keywords = keywords[0:len(keywords)-1] 
+	if len(user_text) == 0:
+		keywords = ""
+	else :
+		keywords = get_keywords(user_text).split(',')
+		keywords = keywords[0:len(keywords)-1] 
 	if 'keywords' in request.GET:
 		new_user_text = []
 		for text in user_text:
